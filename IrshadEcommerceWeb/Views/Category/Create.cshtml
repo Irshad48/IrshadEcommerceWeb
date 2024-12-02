@@ -32,3 +32,13 @@
 		</div>
 	</div>
 </form>
+@* 
+benefit of adding below js script is that 
+currently we are hitting service side code when we click on create button - thats not good
+after adding this - it will not hit server side unless all the client side validations are resolved 
+*@
+@section Scripts{
+	@{
+		<partial name="_validationscriptspartial" />
+	}
+}
