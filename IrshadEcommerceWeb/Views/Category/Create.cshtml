@@ -6,6 +6,12 @@
 			<h2 class="text-primary">Create New Cateory</h2>
 			<hr/>
 		</div>
+		@* asp-validation-summary will display the validation at the top summary level 
+			All - display all validation at summary including property level + model level
+			ModelOnly - display model level messages at summary level and property related messages at field level
+			Nonw - do not show summary level validation
+		*@
+		<div asp-validation-summary="ModelOnly"></div>
 		<div class="row mb-3 p-1">
 			<label asp-for="Name" class="p-0"></label>
 			<input asp-for="Name" class="form-control" />
