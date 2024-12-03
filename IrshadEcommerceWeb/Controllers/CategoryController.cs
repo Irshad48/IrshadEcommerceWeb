@@ -45,5 +45,37 @@ namespace IrshadEcommerceWeb.Controllers
             return View();
         }
 
+        public IActionResult Edit(int? Id)
+        {
+            if( Id == 0 &&  Id == null)
+            {
+                return NotFound();
+            }
+            Category? category = _db.Categories.FirstOrDefault(c => c.Id ==  Id);
+            //other ways 
+            //Category? category1 = _db.Categories.Find(CategoryId);
+            //Category? category2 = _db.Categories.Where(c => c.Id == CategoryId).FirstOrDefault();
+            if (category == null)
+            {
+                return NotFound();
+            }
+            return View(category);
+        }
+        [HttpPost]
+        public IActionResult Edit(Category obj)
+        {
+            if (!string.IsNullOrEmpty(obj.Name) && obj.Name.All(char.IsDigit))
+            {
+                ModelState.AddModelError("Name", "Name should not be only integer, Pls enter valid Name");
+            }
+            if (ModelState.IsValid)
+            {
+
+                _db.Categories.Update(obj);
+                _db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View();
+        }
     }
 }
