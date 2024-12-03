@@ -1,6 +1,8 @@
 ﻿@model Category
 
 <form method="post">
+	@* this is option if the get ActionMethod Param is matching with model property, but keep it so when we hit post button we know the Id is populated from here *@
+	<input asp-for="Id" hidden />
 	<div class="border p-3 mt-4">
 		<div class="row pb-2">
 			<h2 class="text-primary">Edit Cateory</h2>
