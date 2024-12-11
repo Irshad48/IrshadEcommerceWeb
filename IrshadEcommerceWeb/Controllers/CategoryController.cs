@@ -77,5 +77,32 @@ namespace IrshadEcommerceWeb.Controllers
             }
             return View();
         }
+
+        public IActionResult Delete(int? Id)
+        {
+            if (Id == 0 && Id == null)
+            {
+                return NotFound();
+            }
+            Category? category = _db.Categories.FirstOrDefault(c => c.Id == Id);           
+            if (category == null)
+            {
+                return NotFound();
+            }
+            return View(category);
+        }
+        [HttpPost, ActionName("Delete")]
+        public IActionResult DeletePOST(int? Id)
+        {
+            Category? obj = _db.Categories.FirstOrDefault(c => c.Id == Id);
+            if (obj == null)
+            {
+                return NotFound();
+            }
+            _db.Categories.Remove(obj);
+            _db.SaveChanges();
+            return RedirectToAction("Index");
+           
+        }
     }
 }

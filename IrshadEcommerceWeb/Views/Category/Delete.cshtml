@@ -1,0 +1,46 @@
+﻿@model Category
+
+<form method="post">
+	@* this is option if the get ActionMethod Param is matching with model property, but keep it so when we hit post button we know the Id is populated from here *@
+	<input asp-for="Id" hidden />
+	<div class="border p-3 mt-4">
+		<div class="row pb-2">
+			<h2 class="text-primary">Delete Cateory</h2>
+			<hr />
+		</div>
+		@* asp-validation-summary will display the validation at the top summary level 
+			All - display all validation at summary including property level + model level
+			ModelOnly - display model level messages at summary level and property related messages at field level
+			Nonw - do not show summary level validation
+		*@
+		
+		<div class="row mb-3 p-1">
+			<label asp-for="Name" class="p-0"></label>
+			<input asp-for="Name" disabled class="form-control" />
+			
+		</div>
+		<div class="row mb-3 p-1">
+			<label asp-for="DisplayOrder" class="p-0"></label>
+			<input asp-for="DisplayOrder" disabled class="form-control" />
+			
+		</div>
+		<div class="row">
+			<div class="col-6 col-md-3">
+				<button type="submit" class="btn btn-danger form-control" >Delete</button>
+			</div>
+			<div class="col-6 col-md-3">
+				<a asp-controller="Category" asp-action="Index" class="btn btn-outline-secondary border form-control">Back To List</a>
+			</div>
+		</div>
+	</div>
+</form>
+@* 
+benefit of adding below js script is that 
+currently we are hitting service side code when we click on create button - thats not good
+after adding this - it will not hit server side unless all the client side validations are resolved 
+*@
+@section Scripts {
+	@{
+				<partial name="_validationscriptspartial" />
+	}
+}
