@@ -1,5 +1,5 @@
-﻿using IrshadEcommerceWeb.Data;
-using IrshadEcommerceWeb.Models;
+﻿using IrshadEcommerce.DataAccess.Data;
+using IrshadEcommerce.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace IrshadEcommerceWeb.Controllers

@@ -5,11 +5,11 @@ VisualStudioVersion = 17.10.34928.147
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IrshadEcommerceWeb", "IrshadEcommerceWeb\IrshadEcommerceWeb.csproj", "{939ADBE5-25D9-47D8-ABF5-7A95519AE9DD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IrshadEcommerceWeb.DataAccess", "IrshadEcommerceWeb.DataAccess\IrshadEcommerceWeb.DataAccess.csproj", "{86DD3BE0-5E64-4CAD-BF84-0C0DB07AFD73}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IrshadEcommerce.DataAccess", "IrshadEcommerceWeb.DataAccess\IrshadEcommerce.DataAccess.csproj", "{86DD3BE0-5E64-4CAD-BF84-0C0DB07AFD73}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IrshadEcommerceWeb.Models", "IrshadEcommerceWeb.Models\IrshadEcommerceWeb.Models.csproj", "{01D5A073-4761-41CA-AE4B-C5F179EE4E9C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IrshadEcommerce.Models", "IrshadEcommerceWeb.Models\IrshadEcommerce.Models.csproj", "{01D5A073-4761-41CA-AE4B-C5F179EE4E9C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IrshadEcommerceWeb.Utility", "IrshadEcommerceWeb.Utility\IrshadEcommerceWeb.Utility.csproj", "{A9EC45DE-7C7E-4C47-B930-CA97C133B3FA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IrshadEcommerce.Utility", "IrshadEcommerceWeb.Utility\IrshadEcommerce.Utility.csproj", "{A9EC45DE-7C7E-4C47-B930-CA97C133B3FA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

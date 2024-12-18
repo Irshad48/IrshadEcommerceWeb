@@ -1,4 +1,4 @@
-using IrshadEcommerceWeb.Data;
+using IrshadEcommerce.DataAccess.Data;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);

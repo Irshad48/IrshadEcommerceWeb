@@ -1,7 +1,7 @@
-﻿using IrshadEcommerceWeb.Models;
+﻿using IrshadEcommerce.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace IrshadEcommerceWeb.Data
+namespace IrshadEcommerce.DataAccess.Data
 {
     public class ApplicationDbContext : DbContext
     {
