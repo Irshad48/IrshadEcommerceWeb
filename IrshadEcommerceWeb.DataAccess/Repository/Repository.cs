@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace IrshadEcommerce.DataAccess.Repository
 {
-    internal class Repository<T> : IRepository<T> where T : class
+    public class Repository<T> : IRepository<T> where T : class
     {
         private readonly ApplicationDbContext _db;
         internal DbSet<T> dbSet;
@@ -18,6 +18,7 @@ namespace IrshadEcommerce.DataAccess.Repository
         {
             _db = db;
             this.dbSet = _db.Set<T>();  
+            //_db.Categories = dbSet  -- dbSet is equivalent to what we were using _db.Categories in category controller
         }
         public void Add(T entity)
         {
