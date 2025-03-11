@@ -2,8 +2,9 @@ using IrshadEcommerce.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
-namespace IrshadEcommerceWeb.Controllers
+namespace IrshadEcommerceWeb.Areas.Customer.Controllers
 {
+    [Area("Customer")]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;

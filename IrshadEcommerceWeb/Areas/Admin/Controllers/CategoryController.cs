@@ -3,8 +3,9 @@ using IrshadEcommerce.DataAccess.Repository.IRepository;
 using IrshadEcommerce.Models;
 using Microsoft.AspNetCore.Mvc;
 
-namespace IrshadEcommerceWeb.Controllers
+namespace IrshadEcommerceWeb.Areas.Admin.Controllers
 {
+    [Area("Admin")]
     public class CategoryController : Controller
     {
         private readonly IUnitOfWork _unitOfWork;
@@ -24,7 +25,7 @@ namespace IrshadEcommerceWeb.Controllers
         [HttpPost]
         public IActionResult Create(Category obj)
         {
-            if(!string.IsNullOrEmpty(obj.Name) && obj.Name.All(char.IsDigit))
+            if (!string.IsNullOrEmpty(obj.Name) && obj.Name.All(char.IsDigit))
             {
                 //first parameter is Key - is asp-for set in the view for the model property
                 //it will show error below field
@@ -49,11 +50,11 @@ namespace IrshadEcommerceWeb.Controllers
 
         public IActionResult Edit(int? Id)
         {
-            if( Id == 0 &&  Id == null)
+            if (Id == 0 && Id == null)
             {
                 return NotFound();
             }
-            Category? category = _unitOfWork.Category.Get(c => c.Id ==  Id);
+            Category? category = _unitOfWork.Category.Get(c => c.Id == Id);
             //other ways 
             //Category? category1 = _db.Categories.Find(CategoryId);
             //Category? category2 = _db.Categories.Where(c => c.Id == CategoryId).FirstOrDefault();
@@ -106,7 +107,7 @@ namespace IrshadEcommerceWeb.Controllers
             _unitOfWork.Save();
             TempData["success"] = "Category deleted successfully";
             return RedirectToAction("Index");
-           
+
         }
     }
 }
