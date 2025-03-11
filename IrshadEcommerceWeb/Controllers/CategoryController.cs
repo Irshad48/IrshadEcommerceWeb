@@ -1,4 +1,5 @@
 ﻿using IrshadEcommerce.DataAccess.Data;
+using IrshadEcommerce.DataAccess.Repository.IRepository;
 using IrshadEcommerce.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -6,14 +7,14 @@ namespace IrshadEcommerceWeb.Controllers
 {
     public class CategoryController : Controller
     {
-        private readonly ApplicationDbContext _db;
-        public CategoryController(ApplicationDbContext db)
+        private readonly ICategoryRepository _categoryRepo;
+        public CategoryController(ICategoryRepository categoryRepo)
         {
-            _db = db;            
+            _categoryRepo = categoryRepo;            
         }
         public IActionResult Index()
         {
-            List<Category> objCategoryList = _db.Categories.ToList();
+            List<Category> objCategoryList = _categoryRepo.GetAll().ToList();
             return View(objCategoryList);
         }
         public IActionResult Create()
@@ -38,8 +39,8 @@ namespace IrshadEcommerceWeb.Controllers
             if (ModelState.IsValid)
             {
 
-                _db.Categories.Add(obj);
-                _db.SaveChanges();
+                _categoryRepo.Add(obj);
+                _categoryRepo.Save();
                 TempData["success"] = "Category created successfully";
                 return RedirectToAction("Index");
             }
@@ -52,7 +53,7 @@ namespace IrshadEcommerceWeb.Controllers
             {
                 return NotFound();
             }
-            Category? category = _db.Categories.FirstOrDefault(c => c.Id ==  Id);
+            Category? category = _categoryRepo.Get(c => c.Id ==  Id);
             //other ways 
             //Category? category1 = _db.Categories.Find(CategoryId);
             //Category? category2 = _db.Categories.Where(c => c.Id == CategoryId).FirstOrDefault();
@@ -72,8 +73,8 @@ namespace IrshadEcommerceWeb.Controllers
             if (ModelState.IsValid)
             {
 
-                _db.Categories.Update(obj);
-                _db.SaveChanges();
+                _categoryRepo.Update(obj);
+                _categoryRepo.Save();
                 TempData["success"] = "Category updated successfully";
                 return RedirectToAction("Index");
             }
@@ -86,7 +87,7 @@ namespace IrshadEcommerceWeb.Controllers
             {
                 return NotFound();
             }
-            Category? category = _db.Categories.FirstOrDefault(c => c.Id == Id);           
+            Category? category = _categoryRepo.Get(c => c.Id == Id);
             if (category == null)
             {
                 return NotFound();
@@ -96,13 +97,13 @@ namespace IrshadEcommerceWeb.Controllers
         [HttpPost, ActionName("Delete")]
         public IActionResult DeletePOST(int? Id)
         {
-            Category? obj = _db.Categories.FirstOrDefault(c => c.Id == Id);
+            Category? obj = _categoryRepo.Get(c => c.Id == Id);
             if (obj == null)
             {
                 return NotFound();
             }
-            _db.Categories.Remove(obj);
-            _db.SaveChanges();
+            _categoryRepo.Remove(obj);
+            _categoryRepo.Save();
             TempData["success"] = "Category deleted successfully";
             return RedirectToAction("Index");
            
