@@ -11,6 +11,6 @@ namespace IrshadEcommerce.DataAccess.Repository.IRepository
     {
         //update method is not part of common repo bcas implementation of Update may differ
         void Update(Category obj);
-        void Save();
+ 
     }
 }
