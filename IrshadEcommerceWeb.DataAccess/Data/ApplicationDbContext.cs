@@ -32,7 +32,8 @@ namespace IrshadEcommerce.DataAccess.Data
                     Price = 99,
                     Price50 = 90,
                     Price100 = 80,
-                    CategoryId = 1
+                    CategoryId = 1,
+                    ImageUrl = ""
                 },
                 new Product
                 {
@@ -45,7 +46,8 @@ namespace IrshadEcommerce.DataAccess.Data
                     Price = 990,
                     Price50 = 900,
                     Price100 = 800,
-                    CategoryId = 2
+                    CategoryId = 2,
+                    ImageUrl = ""
                 },
                 new Product
                 {
@@ -58,7 +60,8 @@ namespace IrshadEcommerce.DataAccess.Data
                     Price = 9900,
                     Price50 = 9000,
                     Price100 = 8000,
-                    CategoryId = 3
+                    CategoryId = 3,
+                    ImageUrl = ""
                 }
                 );
         }
