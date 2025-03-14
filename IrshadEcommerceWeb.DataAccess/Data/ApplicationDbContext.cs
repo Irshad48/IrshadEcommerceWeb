@@ -27,8 +27,9 @@ namespace IrshadEcommerce.DataAccess.Data
                     Title = "Title 1",
                     Author = "Author 1",
                     Description = "Description 1",
-                    ISBN = "ISBN 1",
+                    ISBN = "ISBN 1",                    
                     ListPrice = 99,
+                    Price = 99,
                     Price50 = 90,
                     Price100 = 80
                 },
@@ -40,6 +41,7 @@ namespace IrshadEcommerce.DataAccess.Data
                     Description = "Description 2",
                     ISBN = "ISBN 2",
                     ListPrice = 990,
+                    Price = 990,
                     Price50 = 900,
                     Price100 = 800
                 },
@@ -51,6 +53,7 @@ namespace IrshadEcommerce.DataAccess.Data
                     Description = "Description 3",
                     ISBN = "ISBN 3",
                     ListPrice = 9900,
+                    Price = 9900,
                     Price50 = 9000,
                     Price100 = 8000
                 }
